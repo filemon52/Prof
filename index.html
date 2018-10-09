@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Page</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<nav>
+		<div class="menumobile">
+			<a href="#" onclick="showMenu()">Menu</a>
+		</div>
+		<ul id="menu">
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">PRODUCT</a></li>
+			<li><a href="#">GALLERY</a></li>
+			<li><a href="#">NEWS</a></li>
+			<li><a href="#">MY INVENTORY</a></li>
+		</ul>
+	</nav>
+	<section id="boxprofile">
+		<div class="imgprofile">
+			<div class="photo" id="pFoto" style="background-image: url(profile.jpg);"></div>
+		</div>
+		<div class="description">
+			<h1 id="pNama">Filemon Steven Juliyanto</h1>
+			<p id="pRole">Front End Designer</p>
+			<a href="#input-form" class="button bg-green" onclick="editForm()">Edit</a>
+			<a href="#" class="button bg-blue">Resume</a>
+		</div>
+		<div class="information">
+			<div class="data">
+				<p class="field">Availability</p>
+				<p id="pAlvailable" class="text-gray">Full Time</p>
+			</div>
+			<div class="data">
+				<p class="field">Age</p>
+				<p id="pAge" class="text-gray">16</p>
+			</div>
+			<div class="data">
+				<p class="field">Location</p>
+				<p id="pLocation" class="text-gray">Purwokerto, Indonesia</p>
+			</div>
+			<div class="data">
+				<p class="field">Years Experience</p>
+				<p id="pExperience" class="text-gray">3</p>
+			</div>
+			<div class="data">
+				<p class="field">Email</p>
+				<p id="pEmail" class="text-gray">Filemonsesen@gmail.com</p>
+			</div>
+			<div class="data">
+				<p class="field">Agama</p>
+				<p id="pAgama" class="text-gray">Kristen</p>
+			</div>
+		</div>
+	</section>
+<section id="input-form">
+	<!-- <form method="#" action="#"> -->
+	<div class="form">
+		<label>Foto Profile</label>
+		<input id="inFoto" type="file" name="foto">
+	</div>
+	<div class="form">
+		<label>Name</label>
+	<textarea id="inNama" type="text" name="nama"></textarea>
+	</div>
+	<div class="form">
+		<label>Role</label>
+	<textarea id="inRole" type="text" name="role"></textarea>
+	</div>
+	<div class="form">
+		<label>Alvailability</label>
+	<textarea id="inAlvailability" type="text" name="alvailability"></textarea>
+	</div>
+	<div class="form">
+		<label>Age</label>
+	<textarea id="inAge" type="number" name="age"></textarea>
+	</div>
+	<div class="form">
+		<label>Location</label>
+	<textarea id="inLocation" type="text" name="location"></textarea>
+	</div>
+	<div class="form">
+		<label>Years Experience</label>
+	<textarea id="inExperience" type="number" name="years"></textarea>
+	</div>
+	<div class="form">
+		<label>Email</label>
+	<textarea  id="inEmail" type="email" name="email"></textarea>
+	</div>
+	<div class="form">
+		<label>Agama</label>
+			<select id="inAgama">
+				<option>Kristen</option>
+				<option>Islam</option>
+				<option>Katholik</option>
+				<option>Hindu</option>
+				<option>Budha</option>
+			</select>
+	</div>
+	<div class="form">
+	<input onclick="simpanForm()" type="submit" name="submit" value="SUBMIT" class="bg-blue2">	
+	</div>
+<!-- </form> --></section>
+<script type="text/javascript">
+	var formMenu = document.getElementById("input-form");
+	formMenu.style.display = "none";
+
+	function editForm(){
+		if(formMenu.style.display === "none"){
+		formMenu.style.display = "block";
+		}else{
+		formMenu.style.display = "none";
+		}
+
+	var name = document.getElementById("pNama").innerHTML;
+	document.getElementById("inNama").value = name;
+
+	var role = document.getElementById("pRole").innerHTML;
+	document.getElementById("inRole").value = role;
+
+	var alvailability = document.getElementById("pAlvailable").innerHTML;
+	document.getElementById("inAlvailability").value = alvailability;
+
+	var age = document.getElementById("pAge").innerHTML;
+	document.getElementById("inAge").value = age;
+
+	var experience = document.getElementById("pExperience").innerHTML;
+	document.getElementById("inExperience").value = experience;
+
+	var location = document.getElementById("pLocation").innerHTML;
+	document.getElementById("inLocation").value = location;
+
+	var email = document.getElementById("pEmail").innerHTML;
+	document.getElementById("inEmail").value = email;
+
+	var agama = document.getElementById("pAgama").innerHTML;
+	document.getElementById("inAgama").value = agama;
+		}
+
+	function showMenu() {
+			var menu = document.getElementById("menu");
+			var box = document.getElementById("boxprofile");
+	
+			if(menu.style.display === "block"){
+				menu.style.display = "none";
+				box.style.paddingTop = "0px";
+			}
+			else{
+				menu.style.display = "block";
+				box.style.paddingTop = "150px";
+			}
+		}
+
+	function simpanForm() {
+			formMenu.style.display = "none";
+			var nama = document.getElementById("inNama").value;
+			document.getElementById("pNama").innerHTML = nama;
+	
+			var role = document.getElementById("inRole").value;
+			document.getElementById("pRole").innerHTML = role;
+	
+			var age = document.getElementById("inAge").value;
+			document.getElementById("pAge").innerHTML = age;
+	
+			var alvailability = document.getElementById("inAlvailability").value;
+			document.getElementById("pAlvailable").innerHTML = alvailability;
+	
+			var email = document.getElementById("inEmail").value;
+			document.getElementById("pEmail").innerHTML = email;
+	
+			var experience = document.getElementById("inExperience").value;
+			document.getElementById("pExperience").innerHTML = experience;
+	
+			var location = document.getElementById("inLocation").value;
+			document.getElementById("pLocation").innerHTML = location;
+
+			var agama = document.getElementById("inAgama").value;
+			document.getElementById("pAgama").innerHTML = agama;
+
+			var foto = document.getElementById("inFoto").value;
+			document.getElementById("pFoto").innerHTML = foto;
+	}
+	</script>
+</body>
+</html>
